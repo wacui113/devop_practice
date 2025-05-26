@@ -56,9 +56,8 @@ Key features include:
 *   **Services:** All application services (web, proxy, product, counter, barista, kitchen), PostgreSQL, and RabbitMQ run as Docker containers on the EC2 instance.
 *   **Networking:** EC2 Security Group allows traffic on necessary ports (SSH, application ports).
 *   **ECR:** Images are pulled from ECR.
-Use code with caution.
-Markdown
 <!-- Diagram -->
+```
 +---------------------------------+
 | Development EC2 Instance |
 | (Docker & Docker Compose) |
@@ -86,6 +85,7 @@ Markdown
 +---------------------------------+
 | Amazon ECR |
 +---------------------------------+
+```
 ### Production Environment Architecture
 
 *   **Compute & Orchestration:** Amazon EKS (Elastic Kubernetes Service) with a managed node group.
@@ -101,8 +101,9 @@ Markdown
     *   Security Groups for EKS nodes, RDS, and Load Balancers.
 *   **Scalability:** Horizontal Pod Autoscaler (HPA) for frontend/critical services.
 *   **ECR:** Images are pulled from ECR.
-Use code with caution.
+
 <!-- Expected Diagram -->
+```
 +---------------------------------------------------------------------------------+
 | AWS Cloud |
 | +-----------------------------------------------------------------------------+ |
@@ -142,7 +143,7 @@ Use code with caution.
 | | Scan (Trivy) -> Push to ECR -> Deploy to EKS (ArgoCD/Helm/kubectl) | |
 | +-----------------------------------------------------------------------------+ |
 +---------------------------------------------------------------------------------+
----
+```
 
 ## 3. Component Description
 
